@@ -1,0 +1,13 @@
+<snippet>
+        <content><![CDATA[
+// n次元配列の初期化。第２引数の型のサイズごとに初期化していく。
+template<typename A, size_t N, typename T>
+void Fill(A (&array)[N], const T &val){
+    std::fill( (T*)array, (T*)(array+N), val );
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fill</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>
