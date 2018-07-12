@@ -1,0 +1,61 @@
+<snippet>
+        <content><![CDATA[
+typedef long long ll;
+
+ll modpow(ll x, ll n) {
+    if (n == 0) return 1;
+    return modpow(x * x % mod, n / 2) * (n & 1 ? x : 1) % mod;
+}
+
+ll modinv(ll a) {
+    return modpow(a, mod - 2);
+}
+
+// assert m is prime
+inline ll  inverse(ll  a, ll  m) {
+    ll  b = m, x = 1, y = 0;
+    // extgcd(a, m, x, y)
+    while (b) {
+        ll  t = a / b;
+        swap(a -= t * b, b);
+        swap(x -= t * y, y);
+    }
+    return (x % m + m) % m;
+}
+
+
+vector<ll> fact, inv_fact;
+void init_fact(ll n) {
+    fact.resize(n);
+    fact[0] = 1;
+    for (ll i = 1; i < n; i++) {
+        fact[i] = i * fact[i - 1] % mod;
+    }
+    inv_fact.resize(n);
+    inv_fact[n - 1] = inverse(fact[n - 1], mod);
+    for (ll i = n - 2; i >= 0; i--) {
+        inv_fact[i] = (i + 1) * inv_fact[i + 1] % mod;
+    }
+}
+
+ll nPr(ll n, ll r) {
+    if (n < r || n < 0 || r < 0) return 0;
+    return fact[n] * inv_fact[n - r] % mod;
+}
+
+ll nCr(ll n, ll r) {
+    if (n < r || n < 0 || r < 0) return 0;
+    return fact[n] * inv_fact[r] % mod * inv_fact[n - r] % mod;
+}
+
+ll nHr(ll n, ll r) {
+    if (n == 0 && r == 0) return 1;
+    return nCr(n + r - 1, r);
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>nCr</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>
