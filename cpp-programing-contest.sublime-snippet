@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[
+#include <bits/stdc++.h>
+#include <iostream>
+#include <utility> // pair
+#include <string>
+#include <vector>
+#define MAX_N 100001
+#define rep(i, n) for(int i=0; i<n; i++)
+using namespace std;
+typedef pair<int, int> P;
+typedef long long ll;
+int n;
+
+int main(){
+    return 0;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>atcoder</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>
