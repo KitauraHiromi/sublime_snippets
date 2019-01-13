@@ -1,0 +1,30 @@
+
+<snippet>
+        <content><![CDATA[
+ll large_combination(ll n, ll r){
+    ll ans = 1;
+    while(r){
+        ll N = n % mod;
+        ll R = r % mod;
+        if(N < R){
+            return 0;
+        }
+        for(int i = 0; i < R; i++){
+            ans = ans * (N - i) % mod;
+        }
+        ll mul = 1;
+        for(int i = 0; i < R;i++){
+            mul = mul * (i + 1) % mod;
+        }
+        ans = ans * inverse(mul) % mod;
+        n /= mod;
+        r /= mod;
+    }
+    return ans;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>largeconbination</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>

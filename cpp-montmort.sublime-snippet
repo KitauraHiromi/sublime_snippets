@@ -1,0 +1,16 @@
+<snippet>
+        <content><![CDATA[
+ll montmort[MAX_N];
+void init_montmort(ll n){
+	montmort[0] = 0;
+	montmort[1] = 1;
+	for(ll i=2; i<=n; i++){
+		montmort[i] = i * (montmort[i-1] + montmort[i-2]) % mod;
+	}
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>montmort</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>
