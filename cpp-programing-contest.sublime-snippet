@@ -6,13 +6,17 @@
 #include <string>
 #include <vector>
 #define MAX_N 100001
-#define rep(i, n) for(int i=0; i<n; i++)
+#define FOR(i, a, b) for(int i=a; i<b; i++)
+#define REP(i, n) for(int i=0; i<n; i++)
+#define RER(i, n) for(int i=n-1; i>=0; i--)
+#define ALL(v) v.begin() v.end()
+#define pb push_back
 using namespace std;
-typedef pair<int, int> P;
 typedef long long ll;
+typedef pair<int, int> P;
 int n;
 
-int main(){
+signed main(){
     return 0;
 }
 ]]></content>
